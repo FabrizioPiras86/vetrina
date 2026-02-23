@@ -1,0 +1,94 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="88" y1="60" x2="1110" y2="840" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#10162D"/>
+      <stop offset="0.52" stop-color="#131D37"/>
+      <stop offset="1" stop-color="#0A111F"/>
+    </linearGradient>
+    <radialGradient id="haloPurple" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(830 260) rotate(14) scale(350 260)">
+      <stop stop-color="#9868FF" stop-opacity="0.36"/>
+      <stop offset="1" stop-color="#9868FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="haloBlue" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(330 640) rotate(-12) scale(380 260)">
+      <stop stop-color="#5CC7FF" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#5CC7FF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="line" x1="120" y1="130" x2="1080" y2="770" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B9D6FF" stop-opacity="0.78"/>
+      <stop offset="1" stop-color="#6AA8FF" stop-opacity="0.18"/>
+    </linearGradient>
+    <linearGradient id="accentOrange" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#FFD27D"/>
+      <stop offset="1" stop-color="#FF8A2E"/>
+    </linearGradient>
+    <linearGradient id="accentGreen" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#B9FFD2"/>
+      <stop offset="1" stop-color="#35CB79"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="900" rx="34" fill="url(#bg)"/>
+  <rect x="36" y="36" width="1128" height="828" rx="28" stroke="url(#line)" stroke-width="2" opacity="0.7"/>
+
+  <ellipse cx="830" cy="260" rx="350" ry="260" fill="url(#haloPurple)"/>
+  <ellipse cx="330" cy="640" rx="380" ry="260" fill="url(#haloBlue)"/>
+
+  <g opacity="0.28" stroke="url(#line)">
+    <path d="M120 220H1080"/>
+    <path d="M120 320H1080"/>
+    <path d="M120 420H1080"/>
+    <path d="M120 520H1080"/>
+    <path d="M120 620H1080"/>
+    <path d="M120 720H1080"/>
+    <path d="M220 120V780"/>
+    <path d="M380 120V780"/>
+    <path d="M540 120V780"/>
+    <path d="M700 120V780"/>
+    <path d="M860 120V780"/>
+    <path d="M1020 120V780"/>
+  </g>
+
+  <g transform="translate(122 112)">
+    <rect x="0" y="0" width="496" height="230" rx="20" fill="#101D33" fill-opacity="0.9" stroke="url(#line)"/>
+    <text x="30" y="64" fill="#E2EEFF" font-family="Manrope, Segoe UI, sans-serif" font-size="34" font-weight="800">Composizione visual ad alto contrasto</text>
+    <text x="30" y="108" fill="#C2D8F5" font-family="Manrope, Segoe UI, sans-serif" font-size="20">Splash, logo reveal e interazioni mouse-driven</text>
+    <text x="30" y="146" fill="#C2D8F5" font-family="Manrope, Segoe UI, sans-serif" font-size="20">in una sola scena leggibile e pulita.</text>
+    <rect x="30" y="172" width="180" height="36" rx="18" fill="#1A2C48" stroke="#7DA6D8"/>
+    <text x="60" y="196" fill="#DCEBFF" font-family="Manrope, Segoe UI, sans-serif" font-size="14" font-weight="700">FULLSCREEN READY</text>
+  </g>
+
+  <g transform="translate(742 126)">
+    <rect x="0" y="0" width="340" height="256" rx="20" fill="#0F1A30" fill-opacity="0.92" stroke="url(#line)"/>
+    <circle cx="170" cy="128" r="84" stroke="#9B6FFF" stroke-opacity="0.8" stroke-width="2"/>
+    <circle cx="170" cy="128" r="106" stroke="#5FCBFF" stroke-opacity="0.5" stroke-width="2" stroke-dasharray="8 8"/>
+    <image href="/logo-ap.svg" x="122" y="80" width="96" height="96"/>
+    <text x="170" y="228" text-anchor="middle" fill="#CFE5FF" font-family="Manrope, Segoe UI, sans-serif" font-size="16" font-weight="700">LOGO FINALE SPLASH</text>
+  </g>
+
+  <g transform="translate(160 460)">
+    <path d="M76 20C40 20 22 52 22 80C22 116 54 146 76 166C98 146 130 116 130 80C130 52 112 20 76 20Z" fill="#2B0E20"/>
+    <path d="M76 30C46 30 32 56 32 80C32 111 60 138 76 154C92 138 120 111 120 80C120 56 106 30 76 30Z" stroke="#FF5A78" stroke-opacity="0.8" stroke-width="4"/>
+    <circle cx="50" cy="64" r="5" fill="#FFA5B8"/>
+    <circle cx="76" cy="48" r="5" fill="#FFA5B8"/>
+    <circle cx="101" cy="64" r="5" fill="#FFA5B8"/>
+    <text x="76" y="206" text-anchor="middle" fill="#D7E8FF" font-family="Manrope, Segoe UI, sans-serif" font-size="18" font-weight="700">HEART MERGE</text>
+  </g>
+
+  <g transform="translate(900 494)">
+    <rect x="-14" y="28" width="28" height="84" rx="14" fill="url(#accentGreen)"/>
+    <path d="M0 0L20 34H-20L0 0Z" fill="#D4FFE6"/>
+    <path d="M0 120L10 152H-10L0 120Z" fill="#B8FFD4"/>
+    <path d="M-182 70H-34" stroke="#4FFF9F" stroke-width="4" stroke-linecap="round"/>
+    <path d="M182 70H34" stroke="#4FFF9F" stroke-width="4" stroke-linecap="round"/>
+    <path d="M0 242V124" stroke="#4FFF9F" stroke-width="4" stroke-linecap="round"/>
+    <text x="0" y="190" text-anchor="middle" fill="#D7E8FF" font-family="Manrope, Segoe UI, sans-serif" font-size="18" font-weight="700">LASER ROCKET</text>
+  </g>
+
+  <g transform="translate(612 612)">
+    <path d="M0 0C36 -70 118 -94 196 -52C254 -20 282 30 274 84C266 148 220 188 162 208C84 236 -6 208 -56 142C-98 86 -96 34 -62 -8C-38 -38 -14 -46 0 -46" stroke="url(#accentOrange)" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="0" cy="0" r="3.5" fill="#FFE2A7"/>
+    <circle cx="54" cy="-40" r="3.5" fill="#FFE2A7"/>
+    <circle cx="110" cy="-56" r="3.5" fill="#FFE2A7"/>
+    <text x="112" y="256" text-anchor="middle" fill="#D7E8FF" font-family="Manrope, Segoe UI, sans-serif" font-size="18" font-weight="700">GLOWING MOON</text>
+  </g>
+</svg>

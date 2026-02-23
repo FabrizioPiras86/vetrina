@@ -1,0 +1,2086 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap");
+
+:root {
+  --page-bg: #f2f4f8;
+  --ink: #0f1724;
+  --ink-soft: #41506a;
+  --line: #d7deea;
+  --line-strong: #c3cfdf;
+  --panel: #ffffff;
+  --panel-2: #fbfcff;
+  --brand: #5d6fe7;
+  --brand-dark: #2f3a86;
+  --accent: #ff7e3a;
+  --radius-xl: 24px;
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --shadow-card: 0 22px 38px rgba(31, 47, 78, 0.08);
+  --shadow-soft: 0 10px 20px rgba(28, 43, 72, 0.08);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 700px at 90% 5%, rgba(184, 194, 227, 0.36), transparent 70%),
+    radial-gradient(900px 520px at 10% 90%, rgba(191, 208, 235, 0.24), transparent 72%),
+    var(--page-bg);
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+.appRoot {
+  min-height: 100vh;
+}
+
+.galleryPage {
+  min-height: 100vh;
+  padding: clamp(16px, 2.4vw, 30px) 14px 48px;
+}
+
+.galleryShell {
+  width: min(1150px, 100%);
+  margin: 0 auto;
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+.topLogo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(125, 105, 194, 0.5);
+  box-shadow: 0 0 14px rgba(122, 100, 196, 0.24);
+  background: #0c0a1f;
+  flex-shrink: 0;
+}
+
+.topMeta h1 {
+  margin: 0;
+  font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.topTitleRow {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.topLead {
+  font-size: clamp(12px, 1.35vw, 17px);
+  color: #3f4d66;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+}
+
+.topMeta p {
+  margin: 3px 0 0;
+  font-size: 13px;
+  color: var(--ink-soft);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.panel {
+  margin-top: 14px;
+  border: 1px solid var(--line);
+  background: linear-gradient(160deg, var(--panel), var(--panel-2));
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  padding: 16px;
+}
+
+.panelHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.panelTitle {
+  margin: 0;
+  font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
+  font-size: clamp(18px, 2.3vw, 28px);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+}
+
+.panelHint {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 11px;
+  color: var(--ink-soft);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.splashCardGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.splashCardButton {
+  text-align: left;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: #fff;
+  padding: 10px;
+  cursor: pointer;
+  transition: border-color 0.2s var(--ease-out), transform 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
+}
+
+.splashCardButton:hover {
+  border-color: #b9c6dd;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 18px rgba(35, 53, 86, 0.08);
+}
+
+.splashCardButton:focus-visible {
+  outline: 2px solid #a5b9e4;
+  outline-offset: 3px;
+}
+
+.splashPreviewStage {
+  height: 210px;
+  border: 1px solid #1a243a;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #090f19;
+}
+
+.splashCardMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.splashCardMeta strong {
+  font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+}
+
+.splashCardMeta span {
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+.mouseSectionLayout {
+  display: grid;
+  grid-template-columns: 310px minmax(0, 1fr);
+  gap: 12px;
+}
+
+.mouseModeGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.mouseModeButton {
+  text-align: left;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px 12px;
+  background: #fff;
+  color: #152038;
+  cursor: pointer;
+  transition: all 0.18s var(--ease-out);
+}
+
+.mouseModeButton span {
+  display: block;
+  font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.01em;
+}
+
+.mouseModeButton small {
+  display: block;
+  margin-top: 4px;
+  color: var(--ink-soft);
+  font-size: 12px;
+}
+
+.mouseModeButton.is-active {
+  border-color: #9db0d4;
+  background: #f4f7ff;
+  box-shadow: inset 0 0 0 1px rgba(140, 162, 206, 0.2);
+}
+
+.pointerLab {
+  position: relative;
+  min-height: 252px;
+  border: 1px solid #162136;
+  border-radius: 14px;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(420px 260px at 50% 30%, rgba(54, 86, 142, 0.3), transparent 70%),
+    linear-gradient(180deg, #09101b, #0a1422 70%);
+}
+
+.pointerLab::before,
+.pointerLab::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.pointerLab::before {
+  background:
+    radial-gradient(180px 120px at 50% 55%, rgba(125, 158, 208, 0.14), transparent 82%),
+    radial-gradient(220px 120px at 50% 100%, rgba(10, 14, 23, 0.38), transparent 86%);
+}
+
+.pointerLab--silk {
+  background:
+    radial-gradient(420px 260px at 50% 32%, rgba(65, 105, 175, 0.34), transparent 70%),
+    linear-gradient(180deg, #09111e, #0a1322 72%);
+}
+
+.pointerLab--silk::after {
+  background: linear-gradient(120deg, transparent 18%, rgba(122, 174, 255, 0.16) 50%, transparent 82%);
+  opacity: 0.28;
+  animation: silkSheen 8.5s linear infinite;
+}
+
+.pointerLab--amber {
+  background:
+    radial-gradient(500px 320px at 50% 36%, rgba(164, 98, 34, 0.42), transparent 70%),
+    linear-gradient(180deg, #171009, #16121a 74%);
+}
+
+.pointerLab--amber::after {
+  background:
+    radial-gradient(320px 180px at 72% 34%, rgba(255, 192, 114, 0.16), transparent 72%),
+    repeating-linear-gradient(128deg, rgba(255, 183, 102, 0.1) 0 2px, transparent 2px 11px);
+  opacity: 0.22;
+  mix-blend-mode: screen;
+  animation: amberDrift 10s linear infinite;
+}
+
+.pointerLab--violet {
+  background:
+    radial-gradient(450px 280px at 50% 30%, rgba(104, 70, 192, 0.32), transparent 72%),
+    linear-gradient(180deg, #0f0c1b, #121229 74%);
+}
+
+.pointerLab--violet::after {
+  background:
+    radial-gradient(circle at 30% 52%, rgba(180, 148, 255, 0.14), transparent 35%),
+    radial-gradient(circle at 72% 40%, rgba(132, 208, 255, 0.11), transparent 38%),
+    repeating-radial-gradient(circle at 50% 50%, transparent 0 28px, rgba(172, 127, 255, 0.08) 28px 30px);
+  opacity: 0.32;
+  mix-blend-mode: screen;
+  animation: violetWarp 7.6s ease-in-out infinite;
+}
+
+.pointerLab--steel {
+  background:
+    radial-gradient(420px 260px at 50% 26%, rgba(108, 132, 171, 0.24), transparent 70%),
+    linear-gradient(180deg, #0b1019, #0d1625 72%);
+}
+
+.pointerLab--steel::after {
+  background:
+    linear-gradient(108deg, transparent 0 28%, rgba(146, 185, 240, 0.11) 50%, transparent 74%),
+    repeating-linear-gradient(0deg, rgba(150, 180, 220, 0.07) 0 1px, transparent 1px 7px);
+  opacity: 0.24;
+  animation: steelSweep 9s linear infinite;
+}
+
+@keyframes silkSheen {
+  from {
+    transform: translateX(-32%);
+  }
+
+  to {
+    transform: translateX(34%);
+  }
+}
+
+@keyframes amberDrift {
+  from {
+    transform: translateX(-18%) translateY(3%);
+  }
+
+  50% {
+    transform: translateX(14%) translateY(-4%);
+  }
+
+  to {
+    transform: translateX(34%) translateY(2%);
+  }
+}
+
+@keyframes violetWarp {
+  0%,
+  100% {
+    transform: scale(0.98) rotate(0deg);
+    opacity: 0.24;
+  }
+
+  50% {
+    transform: scale(1.06) rotate(5deg);
+    opacity: 0.42;
+  }
+}
+
+@keyframes steelSweep {
+  from {
+    transform: translateX(-24%);
+  }
+
+  to {
+    transform: translateX(24%);
+  }
+}
+
+.pointerCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.pointerHintBadge {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  z-index: 2;
+  border: 1px solid rgba(154, 179, 220, 0.52);
+  border-radius: 999px;
+  padding: 6px 10px;
+  background: rgba(41, 64, 104, 0.52);
+  color: rgba(222, 233, 252, 0.95);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.microButtonGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.microButton {
+  position: relative;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  background: linear-gradient(160deg, #fdfefe, #edf1f8);
+  color: #111b2c;
+  min-height: 76px;
+  padding: 11px 10px;
+  text-align: left;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.18s var(--ease-out), border-color 0.18s var(--ease-out);
+}
+
+.microButton:hover {
+  transform: translateY(-1px);
+  border-color: #aebdd9;
+}
+
+.microButtonTitle {
+  display: block;
+  font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
+  font-size: 13px;
+}
+
+.microButtonNote {
+  display: block;
+  margin-top: 4px;
+  font-size: 11px;
+  color: #4f607f;
+  letter-spacing: 0.02em;
+}
+
+.microButton::before,
+.microButton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.btnFx-pulse.is-active::after {
+  inset: 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(91, 114, 184, 0.8);
+  opacity: 1;
+  animation: btnPulseRing 0.62s ease-out;
+}
+
+.btnFx-tilt.is-active {
+  animation: btnTilt 0.7s var(--ease-out);
+}
+
+.btnFx-ripple.is-active::before {
+  left: 50%;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  margin-left: -6px;
+  margin-top: -6px;
+  border-radius: 50%;
+  background: rgba(117, 142, 204, 0.75);
+  opacity: 1;
+  animation: btnRipple 0.66s ease-out;
+}
+
+.btnFx-flip.is-active {
+  animation: btnFlip 0.66s var(--ease-out);
+}
+
+.btnFx-glow.is-active::before {
+  background: linear-gradient(100deg, transparent 20%, rgba(126, 170, 255, 0.82) 50%, transparent 80%);
+  transform: translateX(-130%);
+  opacity: 1;
+  animation: btnSweep 0.66s var(--ease-out);
+}
+
+.btnFx-snap.is-active {
+  animation: btnSnap 0.66s var(--ease-out);
+}
+
+.btnFx-orbit.is-active::before {
+  inset: -28%;
+  border-radius: 50%;
+  background: conic-gradient(from 80deg, transparent 0deg, rgba(110, 134, 199, 0.72) 115deg, transparent 240deg);
+  opacity: 0.9;
+  animation: btnOrbit 0.78s linear;
+}
+
+.btnFx-prism.is-active {
+  animation: btnPrism 0.75s var(--ease-out);
+}
+
+.btnFx-prism.is-active::before {
+  background: linear-gradient(115deg, rgba(92, 130, 210, 0.04), rgba(142, 105, 224, 0.42), rgba(114, 190, 232, 0.04));
+  transform: translateX(-18%);
+  opacity: 1;
+  animation: btnPrismSweep 0.75s var(--ease-out);
+}
+
+.btnFx-prism.is-active::after {
+  inset: 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(132, 144, 224, 0.66);
+  opacity: 1;
+  animation: btnPrismRing 0.75s ease-out;
+}
+
+.btnFx-echo.is-active::before,
+.btnFx-echo.is-active::after {
+  inset: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(92, 116, 186, 0.6);
+  opacity: 1;
+  animation: btnEchoA 0.72s ease-out;
+}
+
+.btnFx-echo.is-active::after {
+  animation-name: btnEchoB;
+}
+
+.btnFx-dash.is-active::before {
+  left: -36%;
+  top: 50%;
+  width: 40%;
+  height: 2px;
+  margin-top: -1px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(88, 120, 194, 0.94), transparent);
+  opacity: 1;
+  animation: btnDash 0.66s linear;
+}
+
+@keyframes btnPulseRing {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.34);
+    opacity: 0;
+  }
+}
+
+@keyframes btnTilt {
+  0% {
+    transform: perspective(700px) rotateX(0deg) rotateY(0deg);
+  }
+
+  35% {
+    transform: perspective(700px) rotateX(10deg) rotateY(-8deg);
+  }
+
+  100% {
+    transform: perspective(700px) rotateX(0deg) rotateY(0deg);
+  }
+}
+
+@keyframes btnRipple {
+  from {
+    transform: scale(0);
+    opacity: 0.8;
+  }
+
+  to {
+    transform: scale(11);
+    opacity: 0;
+  }
+}
+
+@keyframes btnFlip {
+  0% {
+    transform: perspective(720px) rotateX(0deg);
+  }
+
+  40% {
+    transform: perspective(720px) rotateX(18deg);
+  }
+
+  100% {
+    transform: perspective(720px) rotateX(0deg);
+  }
+}
+
+@keyframes btnSweep {
+  from {
+    transform: translateX(-130%);
+  }
+
+  to {
+    transform: translateX(130%);
+  }
+}
+
+@keyframes btnSnap {
+  0% {
+    transform: translateY(0);
+  }
+
+  30% {
+    transform: translateY(4px) scaleY(0.96);
+  }
+
+  65% {
+    transform: translateY(-2px) scaleY(1.02);
+  }
+
+  100% {
+    transform: translateY(0) scaleY(1);
+  }
+}
+
+@keyframes btnOrbit {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes btnPrism {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+
+  50% {
+    filter: hue-rotate(24deg) saturate(1.2);
+  }
+
+  100% {
+    filter: hue-rotate(0deg);
+  }
+}
+
+@keyframes btnPrismSweep {
+  0% {
+    transform: translateX(-26%);
+    opacity: 0;
+  }
+
+  48% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(18%);
+    opacity: 0;
+  }
+}
+
+@keyframes btnPrismRing {
+  0% {
+    transform: scale(0.86);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.24);
+    opacity: 0;
+  }
+}
+
+@keyframes btnEchoA {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes btnEchoB {
+  from {
+    transform: scale(0.72);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.34);
+    opacity: 0;
+  }
+}
+
+@keyframes btnDash {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(360%);
+  }
+}
+
+.is-preview,
+.is-full {
+  width: 100%;
+  height: 100%;
+}
+
+.scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.signatureWriter {
+  position: absolute;
+  left: 50%;
+  bottom: 9.8%;
+  width: min(90%, 760px);
+  transform: translateX(-50%);
+  z-index: 6;
+  --sig-cycle: 5.2s;
+}
+
+.signatureWriter svg {
+  width: 100%;
+  height: auto;
+}
+
+.signatureGuide {
+  fill: none;
+  stroke: rgba(224, 236, 255, 0.12);
+  stroke-width: 1.1;
+  stroke-linecap: round;
+}
+
+.signatureText {
+  font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.signatureTextStroke {
+  fill: none;
+  stroke-width: 1.7;
+  stroke-dasharray: 1800;
+  stroke-dashoffset: 1800;
+  opacity: 0;
+  animation: signatureStroke var(--sig-cycle) linear infinite;
+}
+
+.signatureTextFill {
+  opacity: 0;
+  transform-origin: left center;
+  animation: signatureFill var(--sig-cycle) var(--ease-out) infinite;
+}
+
+.signaturePenDot {
+  opacity: 0;
+  animation: signaturePen var(--sig-cycle) linear infinite;
+}
+
+.signatureWriter--heart .signatureText {
+  font-family: "Cormorant Garamond", "Space Grotesk", serif;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+}
+
+.signatureWriter--moon .signatureText {
+  font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+
+.signatureWriter--rocket .signatureText {
+  font-family: "IBM Plex Sans", "Space Grotesk", sans-serif;
+  font-size: 29px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.signatureWriter--orbit .signatureText {
+  font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+}
+
+.signatureWriter--rose .signatureTextStroke {
+  stroke: rgba(255, 170, 182, 0.96);
+}
+
+.signatureWriter--rose .signatureTextFill {
+  fill: rgba(255, 220, 225, 0.96);
+}
+
+.signatureWriter--rose .signaturePenDot {
+  fill: #ff6b87;
+  filter: drop-shadow(0 0 7px rgba(255, 92, 121, 0.7));
+}
+
+.signatureWriter--amber .signatureTextStroke {
+  stroke: rgba(255, 214, 148, 0.94);
+}
+
+.signatureWriter--amber .signatureTextFill {
+  fill: rgba(255, 230, 184, 0.96);
+}
+
+.signatureWriter--amber .signaturePenDot {
+  fill: #ffb457;
+  filter: drop-shadow(0 0 8px rgba(255, 165, 79, 0.72));
+}
+
+.signatureWriter--mint .signatureTextStroke {
+  stroke: rgba(169, 255, 214, 0.96);
+}
+
+.signatureWriter--mint .signatureTextFill {
+  fill: rgba(214, 255, 236, 0.94);
+}
+
+.signatureWriter--mint .signaturePenDot {
+  fill: #7dffbd;
+  filter: drop-shadow(0 0 8px rgba(106, 253, 181, 0.72));
+}
+
+.signatureWriter--ice .signatureTextStroke {
+  stroke: rgba(184, 222, 255, 0.96);
+}
+
+.signatureWriter--ice .signatureTextFill {
+  fill: rgba(216, 238, 255, 0.95);
+}
+
+.signatureWriter--ice .signaturePenDot {
+  fill: #9ed0ff;
+  filter: drop-shadow(0 0 8px rgba(146, 200, 255, 0.68));
+}
+
+@keyframes signatureStroke {
+  0%,
+  42% {
+    stroke-dashoffset: 1800;
+    opacity: 0;
+  }
+
+  52% {
+    opacity: 1;
+  }
+
+  90% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.14;
+  }
+}
+
+@keyframes signatureFill {
+  0%,
+  56% {
+    opacity: 0;
+    transform: scaleX(0.9);
+  }
+
+  70%,
+  92% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+
+  100% {
+    opacity: 0.3;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes signaturePen {
+  0%,
+  44% {
+    opacity: 0;
+  }
+
+  48%,
+  92% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.scene--heart {
+  --cycle-heart: 5.8s;
+  background:
+    radial-gradient(250px 170px at 50% 44%, rgba(255, 121, 150, 0.24), transparent 74%),
+    radial-gradient(340px 220px at 50% 82%, rgba(120, 26, 56, 0.35), transparent 80%),
+    linear-gradient(180deg, #0f090e, #0a090d 76%);
+}
+
+.heartHalo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 360px;
+  height: 280px;
+  transform: translate(-50%, -54%);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(255, 134, 158, 0.25), rgba(255, 102, 134, 0.05) 58%, transparent 74%);
+  filter: blur(10px);
+  animation: heartHaloBreath calc(var(--cycle-heart) * 0.62) ease-in-out infinite;
+}
+
+.heartVeil {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 340px;
+  height: 220px;
+  transform: translate(-50%, -54%);
+  border-radius: 50%;
+  background: linear-gradient(112deg, transparent 10%, rgba(255, 154, 176, 0.2) 48%, transparent 84%);
+  opacity: 0;
+  animation: heartVeilSweep var(--cycle-heart) linear infinite;
+}
+
+.heartMicroDot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffd8de, #ff5f7a 60%, #a61f3f 100%);
+  box-shadow: 0 0 8px rgba(255, 94, 126, 0.52);
+  transform: translate(var(--sx), var(--sy)) scale(0.14);
+  opacity: 0;
+  animation: heartMicroAssemble var(--cycle-heart) var(--ease-out) infinite;
+  animation-delay: var(--delay);
+}
+
+.heartMicroDot.is-fill {
+  background: radial-gradient(circle at 30% 30%, #ffd9de, #ff6f88 56%, #7b1c36 100%);
+  box-shadow: 0 0 6px rgba(255, 102, 134, 0.42);
+}
+
+.heartShard {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 300px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(255, 178, 197, 0.72), transparent);
+  opacity: 0;
+  --heart-angle: 32deg;
+}
+
+.heartShardA {
+  --heart-angle: 28deg;
+  transform: translate(-50%, -50%) rotate(var(--heart-angle)) scaleX(0.1);
+  animation: heartShardSweep var(--cycle-heart) linear infinite;
+}
+
+.heartShardB {
+  --heart-angle: -32deg;
+  transform: translate(-50%, -50%) rotate(var(--heart-angle)) scaleX(0.1);
+  animation: heartShardSweep var(--cycle-heart) linear infinite;
+  animation-delay: calc(var(--cycle-heart) * 0.22);
+}
+
+.heartCore {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 132px;
+  height: 112px;
+  border-radius: 52% 52% 44% 44%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  background: rgba(255, 102, 130, 0.22);
+  filter: blur(10px);
+  animation: heartCorePulse calc(var(--cycle-heart) * 0.5) ease-in-out infinite;
+}
+
+.heartPulseRing {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 116, 146, 0.52);
+  transform: translate(-50%, -50%) scale(0.4);
+  opacity: 0;
+}
+
+.heartPulseRingA {
+  width: 140px;
+  height: 140px;
+  animation: heartRingPulse var(--cycle-heart) linear infinite;
+}
+
+.heartPulseRingB {
+  width: 178px;
+  height: 178px;
+  animation: heartRingPulse var(--cycle-heart) linear infinite;
+  animation-delay: calc(var(--cycle-heart) * 0.18);
+}
+
+@keyframes heartHaloBreath {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: translate(-50%, -54%) scale(0.92);
+  }
+
+  50% {
+    opacity: 0.62;
+    transform: translate(-50%, -54%) scale(1.08);
+  }
+}
+
+@keyframes heartVeilSweep {
+  0%,
+  22% {
+    opacity: 0;
+    transform: translate(-64%, -54%) rotate(-5deg);
+  }
+
+  42%,
+  70% {
+    opacity: 0.78;
+    transform: translate(-40%, -54%) rotate(0deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-24%, -54%) rotate(5deg);
+  }
+}
+
+@keyframes heartMicroAssemble {
+  0%,
+  14% {
+    opacity: 0;
+    transform: translate(var(--sx), var(--sy)) scale(0.12);
+  }
+
+  30% {
+    opacity: var(--alpha);
+  }
+
+  44%,
+  82% {
+    opacity: var(--alpha);
+    transform: translate(var(--tx), var(--ty)) scale(1);
+  }
+
+  100% {
+    opacity: 0.1;
+    transform: translate(var(--tx), var(--ty)) scale(0.7);
+  }
+}
+
+@keyframes heartShardSweep {
+  0%,
+  26% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(var(--heart-angle)) scaleX(0.1);
+  }
+
+  40%,
+  58% {
+    opacity: 0.88;
+    transform: translate(-50%, -50%) rotate(var(--heart-angle)) scaleX(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(var(--heart-angle)) scaleX(0.18);
+  }
+}
+
+@keyframes heartCorePulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) rotate(-45deg) scale(0.84);
+    opacity: 0.32;
+  }
+
+  48% {
+    transform: translate(-50%, -50%) rotate(-45deg) scale(1.2);
+    opacity: 0.7;
+  }
+}
+
+@keyframes heartRingPulse {
+  0%,
+  45% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.44);
+  }
+
+  66% {
+    opacity: 0.56;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.3);
+  }
+}
+
+.scene--moon {
+  --cycle-moon: 5s;
+  background:
+    radial-gradient(260px 170px at 50% 48%, rgba(255, 165, 80, 0.26), transparent 74%),
+    radial-gradient(320px 180px at 50% 86%, rgba(121, 61, 27, 0.34), transparent 80%),
+    linear-gradient(180deg, #130f0b, #09090c 76%);
+}
+
+.moonHalo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 290px;
+  height: 290px;
+  border-radius: 50%;
+  transform: translate(-50%, -56%);
+  background: radial-gradient(circle, rgba(255, 196, 106, 0.18), transparent 66%);
+  filter: blur(4px);
+  animation: moonHaloBreath calc(var(--cycle-moon) * 0.6) ease-in-out infinite;
+}
+
+.moonBody,
+.moonCut {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+}
+
+.moonBody {
+  --moon-offset: -58%;
+  width: 164px;
+  height: 164px;
+  transform: translate(var(--moon-offset), -54%) scale(0.82);
+  opacity: 0;
+  background: radial-gradient(circle at 28% 28%, #ffe7b2 0, #ffc369 44%, #f38f31 72%, #8f3e13 100%);
+  box-shadow: 0 0 26px rgba(255, 152, 62, 0.58);
+  animation: moonBodyReveal var(--cycle-moon) var(--ease-out) infinite;
+}
+
+.moonCut {
+  --moon-offset: -20%;
+  width: 138px;
+  height: 138px;
+  transform: translate(var(--moon-offset), -54%) scale(0.82);
+  opacity: 0;
+  background: radial-gradient(circle at 45% 48%, rgba(19, 13, 10, 0.96), rgba(11, 9, 9, 0.98) 70%);
+  box-shadow: 0 0 0 1px rgba(33, 21, 14, 0.5);
+  animation: moonBodyReveal var(--cycle-moon) var(--ease-out) infinite;
+}
+
+.moonSweep {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  border-right-color: transparent;
+  opacity: 0;
+  filter: drop-shadow(0 0 10px rgba(255, 164, 75, 0.64));
+}
+
+.moonSweepA {
+  width: 174px;
+  height: 174px;
+  border: 2px solid rgba(255, 193, 112, 0.86);
+  border-top-color: rgba(255, 155, 68, 0.96);
+  transform: translate(-56%, -54%) rotate(-18deg) scale(0.76);
+  animation: moonSweepDraw var(--cycle-moon) var(--ease-out) infinite;
+}
+
+.moonSweepB {
+  width: 152px;
+  height: 152px;
+  border: 2px solid rgba(255, 171, 89, 0.76);
+  border-top-color: rgba(255, 136, 58, 0.92);
+  transform: translate(-56%, -54%) rotate(-20deg) scale(0.82);
+  animation: moonSweepDraw var(--cycle-moon) var(--ease-out) infinite;
+  animation-delay: calc(var(--cycle-moon) * -0.16);
+}
+
+.moonSweepC {
+  width: 130px;
+  height: 130px;
+  border: 1px solid rgba(255, 161, 85, 0.66);
+  border-top-color: rgba(255, 215, 126, 0.86);
+  transform: translate(-56%, -54%) rotate(-22deg) scale(0.86);
+  animation: moonSweepDraw var(--cycle-moon) var(--ease-out) infinite;
+  animation-delay: calc(var(--cycle-moon) * -0.32);
+}
+
+.moonParticle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffeac0, #ffc56a 62%, #db7a26 100%);
+  box-shadow: 0 0 8px rgba(255, 168, 83, 0.58);
+  transform: translate(var(--sx), var(--sy)) scale(0.1);
+  opacity: 0;
+  animation: moonParticleFlow var(--cycle-moon) var(--ease-out) infinite;
+  animation-delay: var(--delay);
+}
+
+@keyframes moonHaloBreath {
+  0%,
+  100% {
+    transform: translate(-50%, -56%) scale(0.92);
+    opacity: 0.34;
+  }
+
+  50% {
+    transform: translate(-50%, -56%) scale(1.08);
+    opacity: 0.66;
+  }
+}
+
+@keyframes moonBodyReveal {
+  0%,
+  18% {
+    opacity: 0;
+    transform: translate(var(--moon-offset), -54%) scale(0.7);
+  }
+
+  34%,
+  82% {
+    opacity: 1;
+    transform: translate(var(--moon-offset), -54%) scale(1);
+  }
+
+  100% {
+    opacity: 0.3;
+    transform: translate(var(--moon-offset), -54%) scale(0.9);
+  }
+}
+
+@keyframes moonSweepDraw {
+  0%,
+  18% {
+    opacity: 0;
+    transform: translate(-56%, -54%) rotate(-20deg) scale(0.72);
+  }
+
+  36%,
+  82% {
+    opacity: 1;
+    transform: translate(-56%, -54%) rotate(-20deg) scale(1);
+  }
+
+  100% {
+    opacity: 0.2;
+    transform: translate(-56%, -54%) rotate(-20deg) scale(0.86);
+  }
+}
+
+@keyframes moonParticleFlow {
+  0%,
+  16% {
+    opacity: 0;
+    transform: translate(var(--sx), var(--sy)) scale(0.06);
+  }
+
+  30% {
+    opacity: var(--alpha);
+  }
+
+  50%,
+  86% {
+    opacity: var(--alpha);
+    transform: translate(var(--tx), var(--ty)) scale(1);
+  }
+
+  100% {
+    opacity: 0.1;
+    transform: translate(var(--tx), var(--ty)) scale(0.66);
+  }
+}
+
+.scene--rocket {
+  --cycle-rocket: 4.4s;
+  background:
+    radial-gradient(220px 150px at 50% 82%, rgba(57, 226, 140, 0.2), transparent 74%),
+    radial-gradient(260px 150px at 50% 30%, rgba(63, 169, 126, 0.14), transparent 70%),
+    linear-gradient(180deg, #08100f, #09111a 74%);
+}
+
+.rocketBeam {
+  position: absolute;
+  opacity: 0;
+}
+
+.rocketBeamLeft,
+.rocketBeamRight {
+  height: 2px;
+  width: 60%;
+  top: 50%;
+  background: linear-gradient(90deg, transparent, rgba(103, 255, 173, 0.96), transparent);
+  filter: drop-shadow(0 0 8px rgba(82, 233, 152, 0.74));
+}
+
+.rocketBeamLeft {
+  left: -60%;
+  animation: rocketBeamLeft var(--cycle-rocket) linear infinite;
+}
+
+.rocketBeamRight {
+  right: -60%;
+  animation: rocketBeamRight var(--cycle-rocket) linear infinite;
+}
+
+.rocketBeamBottom {
+  width: 2px;
+  height: 76%;
+  left: 50%;
+  bottom: -78%;
+  background: linear-gradient(180deg, transparent, rgba(103, 255, 173, 0.95), transparent);
+  animation: rocketBeamBottom var(--cycle-rocket) linear infinite;
+}
+
+.rocketLine {
+  position: absolute;
+  left: 14%;
+  right: 14%;
+  top: 50%;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(106, 255, 175, 0), rgba(106, 255, 175, 0.64), rgba(106, 255, 175, 0));
+  transform: scaleX(0.06);
+  opacity: 0;
+  animation: rocketLinePulse var(--cycle-rocket) var(--ease-out) infinite;
+}
+
+.rocketModel {
+  position: absolute;
+  left: 50%;
+  top: 57%;
+  width: 56px;
+  height: 102px;
+  transform: translate(-50%, -50%) scale(0.18);
+  opacity: 0;
+  animation: rocketAssembly var(--cycle-rocket) var(--ease-out) infinite;
+}
+
+.rocketNose {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 22px;
+  height: 20px;
+  transform: translateX(-50%);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  background: linear-gradient(180deg, #ddffec, #84f8bf);
+}
+
+.rocketBody {
+  position: absolute;
+  left: 50%;
+  top: 16px;
+  width: 34px;
+  height: 60px;
+  transform: translateX(-50%);
+  border-radius: 15px 15px 11px 11px;
+  background: linear-gradient(180deg, #97f8c8, #34bc74);
+  box-shadow: 0 0 15px rgba(60, 224, 139, 0.54);
+}
+
+.rocketWindow {
+  position: absolute;
+  left: 50%;
+  top: 40px;
+  width: 12px;
+  height: 12px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  border: 1px solid rgba(174, 255, 212, 0.76);
+  background: rgba(5, 34, 19, 0.92);
+}
+
+.rocketFin {
+  position: absolute;
+  top: 57px;
+  width: 12px;
+  height: 22px;
+  background: linear-gradient(180deg, #8af6bd, #2ea86a);
+}
+
+.rocketFinLeft {
+  left: 8px;
+  clip-path: polygon(0 0, 100% 24%, 100% 100%, 0 72%);
+}
+
+.rocketFinRight {
+  right: 8px;
+  clip-path: polygon(100% 0, 0 24%, 0 100%, 100% 72%);
+}
+
+.rocketFire {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 11px;
+  height: 22px;
+  transform: translateX(-50%);
+  clip-path: polygon(50% 100%, 100% 0, 0 0);
+  background: linear-gradient(180deg, rgba(171, 255, 211, 0.9), rgba(94, 255, 166, 0));
+  animation: rocketFirePulse 0.44s ease-in-out infinite;
+}
+
+.rocketSpark {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #d8ffe9, #84ffc1 60%, #2fb86e 100%);
+  box-shadow: 0 0 8px rgba(92, 245, 158, 0.62);
+  transform: translate(var(--x), var(--y)) scale(0.16);
+  opacity: 0;
+  animation: rocketSparkSpread var(--cycle-rocket) linear infinite;
+  animation-delay: var(--delay);
+}
+
+@keyframes rocketBeamLeft {
+  0%,
+  10% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+
+  24%,
+  44% {
+    opacity: 1;
+    transform: translateX(126%);
+  }
+
+  68%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes rocketBeamRight {
+  0%,
+  10% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+
+  24%,
+  44% {
+    opacity: 1;
+    transform: translateX(-126%);
+  }
+
+  68%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes rocketBeamBottom {
+  0%,
+  10% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  24%,
+  44% {
+    opacity: 1;
+    transform: translateY(-126%);
+  }
+
+  68%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes rocketLinePulse {
+  0%,
+  24% {
+    opacity: 0;
+    transform: scaleX(0.08);
+  }
+
+  40%,
+  78% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+
+  100% {
+    opacity: 0.16;
+    transform: scaleX(0.66);
+  }
+}
+
+@keyframes rocketAssembly {
+  0%,
+  20% {
+    opacity: 0;
+    transform: translate(-50%, -38%) scale(0.18);
+  }
+
+  36%,
+  74% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  100% {
+    opacity: 0.72;
+    transform: translate(-50%, -68%) scale(0.9);
+  }
+}
+
+@keyframes rocketSparkSpread {
+  0%,
+  24% {
+    opacity: 0;
+    transform: translate(0px, 58px) scale(0.1);
+  }
+
+  42%,
+  72% {
+    opacity: 0.9;
+    transform: translate(var(--x), var(--y)) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(var(--x), calc(var(--y) + 22px)) scale(0.7);
+  }
+}
+
+@keyframes rocketFirePulse {
+  0%,
+  100% {
+    transform: translateX(-50%) scaleY(0.66);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: translateX(-50%) scaleY(1.18);
+    opacity: 1;
+  }
+}
+
+.scene--orbit {
+  --cycle-orbit: 5.2s;
+  background:
+    radial-gradient(250px 170px at 50% 52%, rgba(116, 166, 245, 0.26), transparent 76%),
+    radial-gradient(340px 200px at 50% 88%, rgba(46, 76, 122, 0.24), transparent 82%),
+    linear-gradient(180deg, #07101d, #091221 76%);
+}
+
+.orbitGlow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 320px;
+  height: 220px;
+  border-radius: 50%;
+  transform: translate(-50%, -54%);
+  background: radial-gradient(circle, rgba(132, 182, 255, 0.18), transparent 70%);
+  filter: blur(8px);
+  animation: orbitGlowPulse calc(var(--cycle-orbit) * 0.58) ease-in-out infinite;
+}
+
+.orbitCenter {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: #d7e6ff;
+  box-shadow: 0 0 14px rgba(173, 203, 255, 0.9);
+  animation: orbitCenterPulse calc(var(--cycle-orbit) * 0.5) ease-in-out infinite;
+}
+
+.orbitRing {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  border: 1px solid rgba(142, 181, 239, 0.52);
+  transform: translate(-50%, -50%);
+}
+
+.orbitRingA {
+  width: 88px;
+  height: 88px;
+  animation: orbitSpin 5s linear infinite, orbitRingOpacity 2.3s ease-in-out infinite;
+}
+
+.orbitRingB {
+  width: 126px;
+  height: 126px;
+  border-style: dashed;
+  animation: orbitSpinReverse 6.2s linear infinite, orbitRingOpacity 2.8s ease-in-out infinite;
+  animation-delay: 0s, -0.32s;
+}
+
+.orbitRingC {
+  width: 168px;
+  height: 168px;
+  border-color: rgba(114, 161, 230, 0.36);
+  animation: orbitSpin 7.3s linear infinite, orbitRingOpacity 3.1s ease-in-out infinite;
+  animation-delay: 0s, -0.62s;
+}
+
+.orbitDot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(199, 221, 255, 0.95);
+  box-shadow: 0 0 7px rgba(185, 213, 255, 0.82);
+}
+
+.orbitDotA {
+  animation: orbitDotA 5s linear infinite;
+}
+
+.orbitDotB {
+  animation: orbitDotB 6.2s linear infinite;
+}
+
+.orbitDotC {
+  animation: orbitDotC 7.3s linear infinite;
+}
+
+.orbitConverge {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 60%;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(167, 205, 255, 0.72), transparent);
+  opacity: 0;
+  --orbit-angle: 20deg;
+}
+
+.orbitConvergeA {
+  --orbit-angle: 20deg;
+  transform: translate(-50%, -50%) rotate(var(--orbit-angle)) scaleX(0.06);
+  animation: orbitConvergePulse var(--cycle-orbit) linear infinite;
+}
+
+.orbitConvergeB {
+  --orbit-angle: -35deg;
+  transform: translate(-50%, -50%) rotate(var(--orbit-angle)) scaleX(0.06);
+  animation: orbitConvergePulse var(--cycle-orbit) linear infinite;
+  animation-delay: calc(var(--cycle-orbit) * 0.16);
+}
+
+.orbitShard {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #edf5ff, #9ec6ff 60%, #4f7fd0 100%);
+  box-shadow: 0 0 8px rgba(130, 179, 255, 0.52);
+  transform: translate(var(--sx), var(--sy)) scale(0.12);
+  opacity: 0;
+  animation: orbitShardIn var(--cycle-orbit) var(--ease-out) infinite;
+  animation-delay: var(--delay);
+}
+
+@keyframes orbitGlowPulse {
+  0%,
+  100% {
+    opacity: 0.34;
+    transform: translate(-50%, -54%) scale(0.9);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: translate(-50%, -54%) scale(1.08);
+  }
+}
+
+@keyframes orbitCenterPulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(0.86);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+}
+
+@keyframes orbitRingOpacity {
+  0%,
+  100% {
+    opacity: 0.44;
+  }
+
+  50% {
+    opacity: 0.92;
+  }
+}
+
+@keyframes orbitConvergePulse {
+  0%,
+  24% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(var(--orbit-angle)) scaleX(0.06);
+  }
+
+  40%,
+  68% {
+    opacity: 0.86;
+    transform: translate(-50%, -50%) rotate(var(--orbit-angle)) scaleX(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(var(--orbit-angle)) scaleX(0.16);
+  }
+}
+
+@keyframes orbitShardIn {
+  0%,
+  20% {
+    opacity: 0;
+    transform: translate(var(--sx), var(--sy)) scale(0.12);
+  }
+
+  42%,
+  84% {
+    opacity: var(--alpha);
+    transform: translate(var(--tx), var(--ty)) scale(1);
+  }
+
+  100% {
+    opacity: 0.14;
+    transform: translate(var(--tx), var(--ty)) scale(0.7);
+  }
+}
+
+@keyframes orbitSpin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes orbitSpinReverse {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes orbitDotA {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg) translateX(42px);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg) translateX(42px);
+  }
+}
+
+@keyframes orbitDotB {
+  from {
+    transform: translate(-50%, -50%) rotate(44deg) translateX(59px);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(-316deg) translateX(59px);
+  }
+}
+
+@keyframes orbitDotC {
+  from {
+    transform: translate(-50%, -50%) rotate(120deg) translateX(78px);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(480deg) translateX(78px);
+  }
+}
+
+.is-preview .signatureWriter {
+  width: min(88%, 620px);
+  bottom: 14%;
+}
+
+.is-preview .signatureText {
+  letter-spacing: 0.08em;
+}
+
+.is-preview .signatureWriter--heart .signatureText {
+  font-size: 26px;
+}
+
+.is-preview .signatureWriter--moon .signatureText {
+  font-size: 22px;
+}
+
+.is-preview .signatureWriter--rocket .signatureText {
+  font-size: 21px;
+}
+
+.is-preview .signatureWriter--orbit .signatureText {
+  font-size: 22px;
+}
+
+.is-preview .signatureTextStroke {
+  stroke-width: 1.25;
+}
+
+.is-full .signatureWriter {
+  width: min(92%, 980px);
+  bottom: 8.6%;
+}
+
+.is-full .signatureText {
+  font-size: clamp(34px, 3vw, 44px);
+  letter-spacing: 0.14em;
+}
+
+.splashDetailPage {
+  min-height: 100vh;
+  padding: clamp(14px, 2.2vw, 24px) 12px 24px;
+}
+
+.splashDetailShell {
+  width: min(1220px, 100%);
+  margin: 0 auto;
+}
+
+.splashDetailHeader {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: var(--shadow-soft);
+  padding: 12px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+}
+
+.detailBackButton {
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: #fff;
+  color: #233150;
+  padding: 9px 14px;
+  cursor: pointer;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.detailTitleGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.detailHeaderLogo {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid rgba(126, 105, 192, 0.48);
+  flex-shrink: 0;
+}
+
+.detailTitleGroup h1 {
+  margin: 0;
+  font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
+  font-size: clamp(20px, 2.6vw, 34px);
+  line-height: 1.06;
+}
+
+.detailTitleGroup p {
+  margin: 3px 0 0;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.detailNavChips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.detailChip {
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: #fff;
+  color: #354462;
+  padding: 7px 11px;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.detailChip.is-active {
+  border-color: #9caed5;
+  background: #eff4ff;
+  color: #223259;
+}
+
+.splashDetailStage {
+  margin-top: 12px;
+  height: min(76vh, 760px);
+  min-height: 420px;
+  border: 1px solid #1b273f;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #060d18;
+  box-shadow: var(--shadow-card);
+}
+
+.splashDetailStage .scene {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 1060px) {
+  .microButtonGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .mouseSectionLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .mouseModeGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .splashDetailHeader {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+
+  .detailNavChips {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 780px) {
+  .splashCardGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .mouseModeGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .microButtonGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .panelHead {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .panelHint {
+    font-size: 10.5px;
+  }
+}
+
+@media (max-width: 520px) {
+  .topLogo {
+    width: 42px;
+    height: 42px;
+  }
+
+  .topMeta h1 {
+    font-size: 24px;
+  }
+
+  .microButtonGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .splashPreviewStage {
+    height: 190px;
+  }
+
+  .splashDetailStage {
+    min-height: 340px;
+    height: min(72vh, 520px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pointerLab::after,
+  .splashCardButton,
+  .microButton,
+  .signatureTextStroke,
+  .signatureTextFill,
+  .signaturePenDot,
+  .heartHalo,
+  .heartVeil,
+  .heartMicroDot,
+  .heartShard,
+  .heartCore,
+  .heartPulseRing,
+  .moonHalo,
+  .moonBody,
+  .moonCut,
+  .moonSweep,
+  .moonParticle,
+  .rocketBeam,
+  .rocketLine,
+  .rocketModel,
+  .rocketSpark,
+  .rocketFire,
+  .orbitGlow,
+  .orbitCenter,
+  .orbitRing,
+  .orbitConverge,
+  .orbitShard,
+  .orbitDot,
+  .btnFx-pulse.is-active::after,
+  .btnFx-ripple.is-active::before,
+  .btnFx-glow.is-active::before,
+  .btnFx-orbit.is-active::before,
+  .btnFx-prism.is-active::before,
+  .btnFx-prism.is-active::after,
+  .btnFx-echo.is-active::before,
+  .btnFx-echo.is-active::after,
+  .btnFx-dash.is-active::before {
+    animation: none !important;
+    transition: none !important;
+  }
+}
