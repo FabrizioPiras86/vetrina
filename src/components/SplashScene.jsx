@@ -121,6 +121,25 @@ function buildOrbitShards(total = 44) {
   });
 }
 
+function buildMatrixStreams(total = 30) {
+  return Array.from({ length: total }).map((_, index) => {
+    const glyphTotal = Math.floor(randomBetween(18, 34));
+    const content = Array.from({ length: glyphTotal })
+      .map(() => (Math.random() > 0.5 ? "1" : "0"))
+      .join("\n");
+
+    return {
+      left: ((index + 0.5) / total) * 100 + randomBetween(-1.6, 1.6),
+      size: randomBetween(11, 19).toFixed(2),
+      opacity: randomBetween(0.22, 0.9).toFixed(2),
+      blur: randomBetween(0, 0.9).toFixed(2),
+      duration: randomBetween(3.6, 9).toFixed(2),
+      delay: (-randomBetween(0, 8.8)).toFixed(2),
+      content,
+    };
+  });
+}
+
 const SIGNATURE_VARIANTS = {
   heart: {
     path: "M120 60 Q300 38 490 60 Q680 82 860 60",
@@ -139,6 +158,11 @@ const SIGNATURE_VARIANTS = {
   },
   orbit: {
     path: "M120 60 Q300 74 490 60 Q680 46 860 60",
+    text: "FP SOLUZIONI INFORMATICHE",
+    startOffset: "50%",
+  },
+  matrix: {
+    path: "M48 60 Q490 52 932 60",
     text: "FP SOLUZIONI INFORMATICHE",
     startOffset: "50%",
   },
@@ -323,6 +347,37 @@ function OrbitScene() {
   );
 }
 
+function MatrixScene({ full = false }) {
+  const streams = useMemo(() => buildMatrixStreams(full ? 52 : 32), [full]);
+
+  return (
+    <div className="scene scene--matrix" aria-hidden="true">
+      <span className="matrixGlow matrixGlowTop" />
+      <span className="matrixGlow matrixGlowBottom" />
+      <span className="matrixGridVeil" />
+
+      {streams.map((stream, index) => (
+        <span
+          key={`matrix-stream-${index}`}
+          className="matrixStream"
+          style={{
+            "--left": `${stream.left}%`,
+            "--size": `${stream.size}px`,
+            "--opacity": stream.opacity,
+            "--blur": `${stream.blur}px`,
+            "--duration": `${stream.duration}s`,
+            "--delay": `${stream.delay}s`,
+          }}
+        >
+          {stream.content}
+        </span>
+      ))}
+
+      <SignatureWriter tone="matrix" cycle={5.6} variant="matrix" />
+    </div>
+  );
+}
+
 export default function SplashScene({ id, full = false }) {
   const sceneClass = full ? "is-full" : "is-preview";
 
@@ -346,6 +401,22 @@ export default function SplashScene({ id, full = false }) {
     return (
       <div className={sceneClass}>
         <RocketScene />
+      </div>
+    );
+  }
+
+  if (id === "orbit") {
+    return (
+      <div className={sceneClass}>
+        <OrbitScene />
+      </div>
+    );
+  }
+
+  if (id === "matrix") {
+    return (
+      <div className={sceneClass}>
+        <MatrixScene full={full} />
       </div>
     );
   }

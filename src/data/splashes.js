@@ -19,6 +19,11 @@ export const splashItems = [
     title: "Orbit Signal",
     note: "Anelli e convergenza",
   },
+  {
+    id: "matrix",
+    title: "Matrix Binary Rain",
+    note: "Cascata binaria verde",
+  },
 ];
 
 export function getSplashById(id) {

@@ -204,6 +204,472 @@ button {
   font-size: 13px;
 }
 
+.perfBoard {
+  display: grid;
+  gap: 12px;
+}
+
+.perfScoreGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.perfCard {
+  --perf-color: #6ce1ac;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 12px;
+  background: #fff;
+}
+
+.perfCard--mint {
+  --perf-color: #5fdba8;
+  background: linear-gradient(165deg, rgba(234, 255, 245, 0.82), #ffffff);
+}
+
+.perfCard--sky {
+  --perf-color: #78bcff;
+  background: linear-gradient(165deg, rgba(235, 246, 255, 0.8), #ffffff);
+}
+
+.perfCard--amber {
+  --perf-color: #ffc478;
+  background: linear-gradient(165deg, rgba(255, 247, 232, 0.86), #ffffff);
+}
+
+.perfCardHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.perfCardHead h3 {
+  margin: 0;
+  font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
+  font-size: 18px;
+}
+
+.perfCardHead span {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #4e6180;
+}
+
+.perfGauge {
+  --score-angle: calc(var(--score) * 3.6deg);
+  position: relative;
+  width: 90px;
+  height: 90px;
+  margin-top: 10px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: conic-gradient(var(--perf-color) var(--score-angle), rgba(183, 201, 228, 0.34) 0deg);
+}
+
+.perfGauge::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border-radius: 50%;
+  border: 1px solid rgba(171, 189, 220, 0.44);
+  background: #fff;
+}
+
+.perfGaugeValue {
+  position: relative;
+  z-index: 1;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1e3358;
+}
+
+.perfCard p {
+  margin: 10px 0 0;
+  font-size: 13px;
+  color: #4f6282;
+}
+
+.perfChecklist {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 12px;
+  background: #fff;
+}
+
+.perfChecklist h3 {
+  margin: 0 0 8px;
+  font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
+  font-size: 18px;
+}
+
+.perfChecklist ul {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 6px;
+  color: #3f516f;
+  font-size: 14px;
+}
+
+.shopShowcase {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 12px;
+  background:
+    radial-gradient(360px 180px at 100% 0%, rgba(157, 197, 255, 0.14), transparent 72%),
+    radial-gradient(320px 170px at 0 100%, rgba(176, 240, 219, 0.12), transparent 74%),
+    #fff;
+}
+
+.shopControls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.shopFilterRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.shopFilterButton {
+  border: 1px solid #c1d0e6;
+  border-radius: 999px;
+  background: #fff;
+  color: #354868;
+  padding: 7px 11px;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.shopFilterButton.is-active {
+  border-color: #98b2dd;
+  background: #ecf3ff;
+  color: #1f3154;
+}
+
+.shopSortLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #4e6283;
+}
+
+.shopSortLabel select {
+  border: 1px solid #c1d0e6;
+  border-radius: 10px;
+  padding: 6px 8px;
+  background: #fff;
+  color: #23385f;
+  font-size: 12px;
+}
+
+.shopGrid {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.shopItem {
+  border: 1px solid #d2ddee;
+  border-radius: 14px;
+  padding: 10px;
+  background: #fff;
+}
+
+.shopItemVisual {
+  height: 84px;
+  border-radius: 10px;
+  border: 1px solid rgba(153, 181, 225, 0.34);
+  display: grid;
+  place-items: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.shopItem--audio .shopItemVisual {
+  background: linear-gradient(160deg, rgba(122, 160, 255, 0.34), rgba(96, 198, 255, 0.22));
+  color: #22437f;
+}
+
+.shopItem--home .shopItemVisual {
+  background: linear-gradient(160deg, rgba(134, 239, 193, 0.34), rgba(97, 196, 169, 0.2));
+  color: #1f5d4d;
+}
+
+.shopItem--wearable .shopItemVisual {
+  background: linear-gradient(160deg, rgba(245, 197, 126, 0.38), rgba(247, 148, 95, 0.2));
+  color: #7a4b12;
+}
+
+.shopItem--office .shopItemVisual {
+  background: linear-gradient(160deg, rgba(181, 192, 216, 0.4), rgba(132, 151, 186, 0.2));
+  color: #33466d;
+}
+
+.shopItemBody {
+  margin-top: 9px;
+}
+
+.shopItemTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.shopItemTop h3 {
+  margin: 0;
+  font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.15;
+}
+
+.shopItemBadge {
+  border-radius: 999px;
+  border: 1px solid #c3d2ea;
+  background: #f5f8ff;
+  color: #4b628a;
+  padding: 3px 7px;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.shopItemBody p {
+  margin: 6px 0 0;
+  color: #223a60;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.shopItemBody p span {
+  color: #53698d;
+  font-weight: 500;
+}
+
+.shopQuickButton {
+  margin-top: 10px;
+  width: 100%;
+  border: 1px solid #b8cbe8;
+  border-radius: 10px;
+  background: #f8fbff;
+  color: #294272;
+  padding: 8px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.shopModalBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: rgba(7, 12, 24, 0.5);
+  display: grid;
+  place-items: center;
+  padding: 14px;
+}
+
+.shopModalPanel {
+  width: min(480px, 100%);
+  border-radius: 18px;
+  border: 1px solid rgba(196, 214, 240, 0.6);
+  background: #fff;
+  box-shadow: 0 24px 44px rgba(13, 24, 48, 0.28);
+  overflow: hidden;
+}
+
+.shopModalPanel.shopItem--audio {
+  background:
+    radial-gradient(220px 140px at 100% 0%, rgba(127, 183, 255, 0.22), transparent 72%),
+    #fff;
+}
+
+.shopModalPanel.shopItem--home {
+  background:
+    radial-gradient(220px 140px at 100% 0%, rgba(119, 232, 184, 0.2), transparent 72%),
+    #fff;
+}
+
+.shopModalPanel.shopItem--wearable {
+  background:
+    radial-gradient(220px 140px at 100% 0%, rgba(255, 196, 125, 0.24), transparent 72%),
+    #fff;
+}
+
+.shopModalPanel.shopItem--office {
+  background:
+    radial-gradient(220px 140px at 100% 0%, rgba(173, 186, 214, 0.24), transparent 72%),
+    #fff;
+}
+
+.shopModalBody {
+  padding: 16px;
+}
+
+.shopModalClose {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(198, 214, 239, 0.52);
+  background: rgba(243, 248, 255, 0.92);
+  color: #344b72;
+  padding: 10px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.shopModalBody h3 {
+  margin: 0;
+  font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
+  font-size: 28px;
+}
+
+.shopModalMeta {
+  margin: 7px 0 0;
+  color: #4f6386;
+  font-size: 13px;
+}
+
+.shopModalPrice {
+  margin: 12px 0 0;
+  font-size: 26px;
+  font-weight: 700;
+  color: #18335c;
+}
+
+.shopModalDesc {
+  margin: 8px 0 0;
+  color: #405372;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.finalCtaBlock {
+  display: grid;
+  gap: 12px;
+}
+
+.packageGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.packageCard {
+  border: 1px solid #cad7ec;
+  border-radius: 16px;
+  padding: 12px;
+  background: #fff;
+}
+
+.packageCard.is-featured {
+  border-color: #8fb1e5;
+  background:
+    radial-gradient(260px 140px at 100% 0%, rgba(153, 190, 255, 0.22), transparent 70%),
+    #f8fbff;
+}
+
+.packageCard h3 {
+  margin: 0;
+  font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
+  font-size: 21px;
+}
+
+.packagePrice {
+  margin: 5px 0 0;
+  font-size: 23px;
+  font-weight: 700;
+  color: #1f3761;
+}
+
+.packageNote {
+  margin: 5px 0 0;
+  font-size: 13px;
+  color: #4a5f81;
+}
+
+.packageFeatures {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 6px;
+  font-size: 14px;
+  color: #334864;
+}
+
+.finalActionRow {
+  border-radius: 16px;
+  border: 1px solid #cae0d8;
+  padding: 14px;
+  background:
+    radial-gradient(300px 180px at 92% 0%, rgba(140, 239, 198, 0.2), transparent 72%),
+    linear-gradient(160deg, #ecfff8, #f9fffd);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.finalActionRow h3 {
+  margin: 0;
+  font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
+  font-size: 24px;
+}
+
+.finalActionRow p {
+  margin: 6px 0 0;
+  color: #3f5e5c;
+  font-size: 14px;
+}
+
+.finalActionButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.finalActionButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 118px;
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.finalActionButton--primary {
+  background: #20b56d;
+  color: #fff;
+  border: 1px solid #159156;
+}
+
+.finalActionButton--ghost {
+  background: #fff;
+  color: #2d4e77;
+  border: 1px solid #a8c0e3;
+}
+
 .mouseSectionLayout {
   display: grid;
   grid-template-columns: 310px minmax(0, 1fr);
@@ -798,6 +1264,13 @@ button {
   letter-spacing: 0.11em;
 }
 
+.signatureWriter--matrix .signatureText {
+  font-family: "IBM Plex Sans", "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+}
+
 .signatureWriter--rose .signatureTextStroke {
   stroke: rgba(255, 170, 182, 0.96);
 }
@@ -848,6 +1321,19 @@ button {
 .signatureWriter--ice .signaturePenDot {
   fill: #9ed0ff;
   filter: drop-shadow(0 0 8px rgba(146, 200, 255, 0.68));
+}
+
+.signatureWriter--matrix .signatureTextStroke {
+  stroke: rgba(164, 255, 202, 0.96);
+}
+
+.signatureWriter--matrix .signatureTextFill {
+  fill: rgba(198, 255, 220, 0.94);
+}
+
+.signatureWriter--matrix .signaturePenDot {
+  fill: #88ffb7;
+  filter: drop-shadow(0 0 8px rgba(98, 255, 161, 0.72));
 }
 
 @keyframes signatureStroke {
@@ -1829,6 +2315,116 @@ button {
   }
 }
 
+.scene--matrix {
+  background:
+    radial-gradient(320px 220px at 50% 18%, rgba(65, 255, 140, 0.16), transparent 72%),
+    radial-gradient(380px 210px at 50% 84%, rgba(13, 73, 44, 0.3), transparent 78%),
+    linear-gradient(180deg, #03110a, #020a06 76%);
+}
+
+.matrixGlow {
+  position: absolute;
+  left: 50%;
+  width: min(92%, 980px);
+  height: 30%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  filter: blur(22px);
+  animation: matrixGlowPulse 3.8s ease-in-out infinite;
+}
+
+.matrixGlowTop {
+  top: -14%;
+  background: radial-gradient(circle, rgba(84, 255, 153, 0.2), rgba(84, 255, 153, 0) 74%);
+}
+
+.matrixGlowBottom {
+  bottom: -16%;
+  background: radial-gradient(circle, rgba(17, 128, 76, 0.26), rgba(17, 128, 76, 0) 72%);
+  animation-delay: -1.9s;
+}
+
+.matrixGridVeil {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(180deg, rgba(130, 255, 182, 0.06) 0 1px, rgba(130, 255, 182, 0) 1px 9px),
+    linear-gradient(90deg, rgba(122, 255, 177, 0) 0, rgba(122, 255, 177, 0.04) 48%, rgba(122, 255, 177, 0) 100%);
+  opacity: 0.5;
+  mix-blend-mode: screen;
+  animation: matrixGridShift 9.5s linear infinite;
+  pointer-events: none;
+}
+
+.matrixStream {
+  position: absolute;
+  left: var(--left);
+  top: -130%;
+  transform: translateX(-50%) translateY(0);
+  white-space: pre;
+  font-family: "IBM Plex Sans", "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: var(--size);
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: 0.08em;
+  color: rgba(136, 255, 179, 0.96);
+  text-shadow: 0 0 12px rgba(95, 255, 154, 0.54);
+  opacity: var(--opacity);
+  filter: blur(var(--blur));
+  user-select: none;
+  pointer-events: none;
+  animation: matrixRain var(--duration) linear infinite;
+  animation-delay: var(--delay);
+}
+
+.matrixStream::first-line {
+  color: #e2ffe8;
+  text-shadow: 0 0 12px rgba(180, 255, 211, 0.8);
+}
+
+@keyframes matrixRain {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-8%);
+  }
+
+  12% {
+    opacity: var(--opacity);
+  }
+
+  88% {
+    opacity: var(--opacity);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(248%);
+  }
+}
+
+@keyframes matrixGlowPulse {
+  0%,
+  100% {
+    opacity: 0.38;
+    transform: translateX(-50%) scale(0.94);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: translateX(-50%) scale(1.08);
+  }
+}
+
+@keyframes matrixGridShift {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(9px);
+  }
+}
+
 .is-preview .signatureWriter {
   width: min(88%, 620px);
   bottom: 14%;
@@ -1854,6 +2450,10 @@ button {
   font-size: 22px;
 }
 
+.is-preview .signatureWriter--matrix .signatureText {
+  font-size: 20px;
+}
+
 .is-preview .signatureTextStroke {
   stroke-width: 1.25;
 }
@@ -1866,6 +2466,11 @@ button {
 .is-full .signatureText {
   font-size: clamp(34px, 3vw, 44px);
   letter-spacing: 0.14em;
+}
+
+.is-full .signatureWriter--matrix .signatureText {
+  font-size: clamp(28px, 2.35vw, 34px);
+  letter-spacing: 0.1em;
 }
 
 .splashDetailPage {
@@ -1977,6 +2582,23 @@ button {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .perfScoreGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .shopGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .packageGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .finalActionRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .mouseSectionLayout {
     grid-template-columns: 1fr;
   }
@@ -1998,6 +2620,40 @@ button {
 @media (max-width: 780px) {
   .splashCardGrid {
     grid-template-columns: 1fr;
+  }
+
+  .perfScoreGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .shopControls {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .shopSortLabel {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .shopSortLabel select {
+    min-width: 180px;
+  }
+
+  .shopGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .packageGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .finalActionButtons {
+    width: 100%;
+  }
+
+  .finalActionButton {
+    flex: 1;
   }
 
   .mouseModeGrid {
@@ -2026,6 +2682,10 @@ button {
 
   .topMeta h1 {
     font-size: 24px;
+  }
+
+  .finalActionButtons {
+    flex-direction: column;
   }
 
   .microButtonGrid {
@@ -2071,6 +2731,9 @@ button {
   .orbitConverge,
   .orbitShard,
   .orbitDot,
+  .matrixGlow,
+  .matrixGridVeil,
+  .matrixStream,
   .btnFx-pulse.is-active::after,
   .btnFx-ripple.is-active::before,
   .btnFx-glow.is-active::before,

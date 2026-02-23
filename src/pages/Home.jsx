@@ -2,6 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SplashScene from "../components/SplashScene.jsx";
 import PointerMotionLab from "../components/PointerMotionLab.jsx";
+import PerformanceBlock from "../components/PerformanceBlock.jsx";
+import MiniEcommerceShowcase from "../components/MiniEcommerceShowcase.jsx";
+import FinalCtaPackages from "../components/FinalCtaPackages.jsx";
 import { splashItems } from "../data/splashes.js";
 
 const mouseModes = [
@@ -143,6 +146,33 @@ export default function Home() {
             </div>
             <PointerMotionLab mode={mouseMode} hint="Muovi e clicca nel riquadro" />
           </div>
+        </section>
+
+        <section className="panel">
+          <div className="panelHead">
+            <h2 className="panelTitle">Performance</h2>
+            <span className="panelHint">Lighthouse: Performance, SEO, Accessibilita</span>
+          </div>
+
+          <PerformanceBlock />
+        </section>
+
+        <section className="panel">
+          <div className="panelHead">
+            <h2 className="panelTitle">Mini E-commerce</h2>
+            <span className="panelHint">Filtri, ordinamento e quick view prodotto</span>
+          </div>
+
+          <MiniEcommerceShowcase />
+        </section>
+
+        <section className="panel">
+          <div className="panelHead">
+            <h2 className="panelTitle">Pacchetti</h2>
+            <span className="panelHint">Base, Pro, Su misura + contatto diretto</span>
+          </div>
+
+          <FinalCtaPackages />
         </section>
 
         <section className="panel">
